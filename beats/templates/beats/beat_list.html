@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+<div class="container">
+	<h2 style="margin: 25px 25px 25px 25px;">Beats</h2>
+
+
+	{% block beatlist %}
+
+	{% for beat in beats %}
+	<p><a href="{{ beat.id }}">{{ beat.title }} by {{ beat.artist }}</a></p>
+	{% endfor %}
+
+	{% endblock %}
+</div>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+<div class="container">
+	<h2 style="margin: 25px 25px 25px 25px;">Add or update beats now!</h2>
+
+	{% block beatdetail %}
+
+	    <p>Song Name: {{ beat_detail.title }}</p>
+	    <p>Artist Name: {{ beat_detail.artist }}</p>
+	    <p><a href="{% url 'App:delete_beat' pk=beat_detail.id %}">Delete beat?</a></p>
+	    <p><a href="{% url 'App:update_beat' pk=beat_detail.id %}">Update beat?</a></p>
+
+	    {% for d in beat_detail.details.all %}
+
+	        <p>{{ d.title }} performed by {{ d.song.artist}}</p>
+
+
+	    {% endfor %}
+
+	{% endblock %}
+</div>

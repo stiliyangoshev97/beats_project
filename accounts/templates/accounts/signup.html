@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block register %}
+{% load bootstrap4 %}
+
+    <div class="container" >
+    	<form method="POST">
+    		<h2 style="margin: 25px 25px 25px 25px;">Sign-up now!</h2>
+    		{% csrf_token %}
+    		{% bootstrap_form form %}
+    		<input type="submit" name="" value="Sign Up" class="btn btn-secondary" style='margin-bottom: 25px;'>
+    	</form>
+    	
+    </div>
+
+{% endblock %}

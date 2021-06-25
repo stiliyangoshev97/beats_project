@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+<div class="container">
+	<h2 style="margin: 25px 25px 25px 25px;">Add or update beats now!</h2>
+
+	{% block beat_delete %}
+
+	    <form method="POST">
+	        {% csrf_token %}
+	        <input class="btn btn-secondary" value='Delete 'type="submit">
+	
+	        <!-- school is a template name in views.py for deleting Schools -->
+	        <a href="{% url 'App:b_detail' pk=song.pk%}">Cancel</a>
+
+        </form>
+
+	{% endblock %}
+</div>

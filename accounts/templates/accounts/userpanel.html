@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load bootstrap4 %}
+
+
+{% block userpanel %}
+
+    <div class="container">
+    	<p class="p1">Click me to disappear</p>
+    	
+  <p class="p2">Click here</p>
+</div>
+
+
+<a href="{% url 'App:create' %}">Create</a><br>
+<a href="{% url 'App:beatslist' %}">Beats List</a><br>
+
+
+
+
+<script>
+$( ".p1" ).click(function() {
+  $( this ).slideUp();
+});
+</script>
+<script>
+$(".p2").click(function(){
+	$(".p1").toggle();
+});
+
+ </script>
+
+  
+
+  
+
+{% endblock %}
+
+
